@@ -52,6 +52,7 @@ def login():
                 return redirect(url_for('secure_page'))
             else:
                 flash('Username or Password is incorrect.', 'danger')
+                return redirect(url_for('login'))
 
             # remember to flash a message to the user
             return redirect(url_for("home"))  # they should be redirected to a secure-page route instead
