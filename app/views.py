@@ -66,8 +66,15 @@ def login():
 def secure_page():
     return render_template("secure_page.html")
     
-    
 
+
+@app.route("/Logout")
+def logout():
+    logout_user()
+    flash("Logged-Out",'success')
+    return render_template("home.html")   
+    
+    
 # user_loader callback. This callback is used to reload the user object from
 # the user ID stored in the session
 @login_manager.user_loader
